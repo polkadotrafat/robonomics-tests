@@ -1,6 +1,6 @@
 ### Setup
 
-Start here https://github.com/polkadotrafat/robonomics/tree/main/server#readme
+Start here https://github.com/polkadotrafat/robonomics-tests/tree/main/server#readme
 
 ### Install
 ```
