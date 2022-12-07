@@ -1,0 +1,3 @@
+// Retrieve the encoded calldata of the transaction
+const encodedCalldata = tx.method.toHex()
+console.log(encodedCallData)
