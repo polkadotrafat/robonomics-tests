@@ -6,7 +6,10 @@ const {BigNumber} = require("bignumber.js");
 const { Keyring } = require('@polkadot/keyring');
 const cron = require("node-cron");
 const schedule = require('node-schedule');
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
+require('dotenv').config();
+
+const TESTNET_RPC_URL = "wss://mercury.frontier.rpc.robonomics.network/";
 
 
 let bn= 1000;
@@ -48,11 +51,11 @@ const transact = async (transaction) => {
 
 
 schedule.scheduleJob("30 * * * * *", async () => {
-  //console.log(api);
-  const wsProvider = new WsProvider(process.env.RPC_URL);
+  console.log(process.env.DEVICE1_SEED);
+  const wsProvider = new WsProvider(TESTNET_RPC_URL);
   const api = await ApiPromise.create({ provider: wsProvider });
   const keyring = new Keyring({ type: 'sr25519' });
-  const alice = keyring.addFromUri('//Alice');  
+  const alice = keyring.addFromUri(process.env.DEVICE1_SEED);  
   
   let pow1 = Math.random() * (max1 - min1) + min1;
   pow1 = pow1.toFixed(3)*1000;
