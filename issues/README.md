@@ -71,6 +71,6 @@ UnhandledRejection: Error: Command failed with exit code 2: /bin/bash -c kill -9
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
 ```
 
-2. Error: Input when trying to export wasm runtime for mercury parachain 
+2. Error: Input when trying to export wasm runtime for mercury parachain . 
+I have opened the issue here - https://github.com/airalab/robonomics/issues/323
 
-https://github.com/airalab/robonomics/issues/323
