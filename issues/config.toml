@@ -1,0 +1,23 @@
+[relaychain]
+default_command = "./bin/polkadot"
+default_args = [ "-lparachain=debug" ]
+
+chain = "rococo-local"
+
+    [[relaychain.nodes]]
+    name = "alice"
+    validator = true
+
+    [[relaychain.nodes]]
+    name = "bob"
+    validator = true
+
+[[parachains]]
+id = 2048
+chain = "main-dev"
+
+    [parachains.collator]
+    name = "alice"
+    chain = "main-dev"
+    command = "./bin/robonomics"
+    args = ["-lparachain=debug","--force-authoring"]
